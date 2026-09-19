@@ -1,0 +1,42 @@
+[
+  {
+    "estrategia": "Troca de Dívida Cara por Barata",
+    "descricao": "Contratar uma linha de crédito mais barata (ex.: consignado ou garantia) para quitar à vista as dívidas com juros altos (cartão e cheque especial).",
+    "vantagens": [
+      "Redução drástica da taxa de juros mensal (de ~14% para ~2%)",
+      "Unificação de várias dívidas em um único boleto/parcela mensal",
+      "Estancamento do crescimento de juros compostos abusivos"
+    ],
+    "desvantagens": [
+      "Risco de voltar a usar o cartão de crédito e acumular uma nova dívida",
+      "Exige margem consignável ou bem para dar em garantia"
+    ],
+    "proximo_passo": "Verificar no app oficial do banco se há margem consignável ou linha pré-aprovada com taxa inferior a 3% a.m."
+  },
+  {
+    "estrategia": "Método Avalanche (Foco no Maior Juro)",
+    "descricao": "Pagar o mínimo de todas as contas e concentrar todo o dinheiro extra disponível na dívida com a maior taxa de juros.",
+    "vantagens": [
+      "Economiza a maior quantidade possível de dinheiro em juros ao longo do tempo",
+      "É a estratégia matematicamente mais eficiente"
+    ],
+    "desvantagens": [
+      "Pode demorar mais tempo para ver a primeira dívida quitada se o saldo for alto",
+      "Exige disciplina e paciência nos primeiros meses"
+    ],
+    "proximo_passo": "Listar as dívidas em ordem decrescente de juros e destinar qualquer sobra orçamentária exclusivamente para a primeira da lista."
+  },
+  {
+    "estrategia": "Portabilidade de Crédito",
+    "descricao": "Transferir a dívida para outra instituição financeira que ofereça uma taxa de juros mais baixa do que a atual.",
+    "vantagens": [
+      "Direito garantido por lei e regulamentação do Banco Central",
+      "Não há cobrança de taxas para realizar a transferência de banco"
+    ],
+    "desvantagens": [
+      "A nova instituição não é obrigada a aceitar a transferência",
+      "Exige pesquisa e cotação ativa entre diferentes bancos"
+    ],
+    "proximo_passo": "Solicitar ao credor atual o extrato com o Custo Efetivo Total (CET) e o saldo devedor para apresentar a outros bancos."
+  }
+]
