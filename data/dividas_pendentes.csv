@@ -1,0 +1,5 @@
+id_divida,tipo_divida,credor,valor_atual,taxa_juros_mensal,custo_efetivo_anual,status
+D01,Cartao de Credito (Rotativo),Banco A,3200.00,14.5%,410.0%,Atrasada 45 dias
+D02,Cheque Especial,Banco B,1800.00,8.2%,158.0%,Em uso continuo
+D03,Emprestimo Pessoal,Financeira C,4500.00,5.8%,96.5%,Em dia
+D04,Emprestimo Consignado,Banco D,6000.00,1.8%,23.8%,Em dia (desconto em folha)
