@@ -2,12 +2,13 @@
 
 ## Dados Utilizados
 
-| Arquivo | Formato | Utilização no Agente |
+| Arquivo | Formato | Utilização no GuIAFin |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+| `data/perfil_cliente.json` | JSON | Fornece o contexto orçamentário do cliente (renda e despesas básicas) para que o agente não recomende parcelas inviáveis. |
+| `transacoes.csv` | CSV | Analisar padrão de gastos do usuário e usar essas informações de forma didática. |
+| `data/dividas.csv` | CSV | Contém o histórico de pendências do cliente com taxas de juros reais de mercado para priorizar o pagamento das dívidas mais caras. |
+| `data/opcoes_renegociacao.json` | JSON | Catálogo de estratégias de amortização e renegociação, detalhando vantagens e desvantagens de cada uma. |
+| `data/guia_antifraude.json` | JSON | Repositório de cibersegurança contendo padrões de golpes frequentes em renegociações e regras de validação de canais oficiais. |
 
 ---
 
@@ -15,7 +16,9 @@
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+1. **Substituição de Investimentos por Recuperação:** Em vez de focar em carteira de ações e fundos, os dados focam em comprometimento de renda e custo efetivo total das dívidas.
+2. **Camada de Cibersegurança (`guia_antifraude.json`):** Adicionamos uma base de conhecimento defensiva. Quando o usuário menciona que recebeu uma proposta de desconto agressiva no WhatsApp, o agente cruza com esse guia para alertar sobre possíveis golpes.
+3. **Mapeamento de Prós e Contras:** Cada opção de renegociação possui campos explícitos de vantagens e desvantagens, forçando o agente a ser imparcial e consultivo.
 
 ---
 
@@ -24,7 +27,24 @@
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Existem duas possibilidades: injetar os dados diretamente no prompt (Ctrl + C, Ctrl + V) ou carregar os arquivos via código, como no exemplo abaixo:
+
+```python
+import pandas as pd
+import json
+
+# CSV
+historico = pd.read_csv('data/dividas.csv')
+transacoes = pd.read_csv('data/transacoes.csv')
+
+# JSON
+with open('data/perfil_cliente.json', 'r', encoding='utf-8') as f:
+    perfil = json.load(f)
+with open('data/opcoes_renegociacao.json', 'r', encoding='utf-8') as f:
+    opcoes = json.load(f)
+with open('data/guia_antifraude.json', 'r', encoding='utf-8') as f:
+    seguranca = json.load(f)
+```
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
