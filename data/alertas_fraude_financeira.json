@@ -1,0 +1,38 @@
+[
+  {
+    "id_golpe": "GOLPE-01",
+    "nome_golpe": "Falso Intermediário de Limpeza de Nome",
+    "canal_comum": "WhatsApp e Redes Sociais",
+    "gatilho_suspeito": "Promessa de limpar o nome no Serasa/SPC em 24h mediante pagamento de taxa antecipada via Pix.",
+    "sinais_de_alerta": [
+      "Cobrança de taxa prévia para liberação de crédito ou limpeza de restrição",
+      "Chave Pix vinculada a CPF de pessoa física desconhecida",
+      "Pressão com tom de urgência ('apenas hoje')"
+    ],
+    "orientacao_segura": "Nenhuma instituição oficial cobra taxa adiantada para renegociar dívidas. A negociação deve ser feita diretamente pelos canais oficiais do credor (ex.: app do banco) ou plataformas oficiais como o Serasa Limpa Nome."
+  },
+  {
+    "id_golpe": "GOLPE-02",
+    "nome_golpe": "Boleto Adulterado de Renegociação",
+    "canal_comum": "E-mail, SMS ou WhatsApp",
+    "gatilho_suspeito": "Envio de boleto em PDF com 'super desconto' para quitação imediata de dívida atrasada.",
+    "sinais_de_alerta": [
+      "Código de barras com os primeiros dígitos diferentes do código do banco emissor",
+      "Nome do beneficiário no momento do pagamento diferente da razão social do banco/credor",
+      "Mensagens com erros gramaticais ou links encurtados (bit.ly, tinyurl)"
+    ],
+    "orientacao_segura": "Antes de pagar qualquer boleto de renegociação, confira sempre os dados do 'Beneficiário Final' na tela de confirmação do seu banco. Se o CNPJ ou nome não for exatamente da instituição credora, não conclua o pagamento."
+  },
+  {
+    "id_golpe": "GOLPE-03",
+    "nome_golpe": "Falsa Central Telefônica / Suporte de Segurança",
+    "canal_comum": "Ligação telefônica",
+    "gatilho_suspeito": "Golpista finge ser da área de segurança do banco avisando sobre uma transação suspeita e pede confirmação de dados.",
+    "sinais_de_alerta": [
+      "Solicitação de senhas, códigos de token, CVV do cartão ou código recebido por SMS",
+      "Pedido para transferir dinheiro para uma 'conta segura' ou fazer Pix de teste",
+      "Orientação para instalar aplicativos de suporte remoto no celular"
+    ],
+    "orientacao_segura": "Os bancos oficiais nunca ligam pedindo senha, token ou transferências de teste. Desligue imediatamente e ligue para o número oficial impresso no verso do seu cartão físico."
+  }
+]
