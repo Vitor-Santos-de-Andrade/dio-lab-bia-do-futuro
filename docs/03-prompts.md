@@ -199,5 +199,6 @@ Não posso atender a esse pedido. Como assistente financeiro seguro, sigo rigoro
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
+- Incluir regras de defesa contra golpes nos prompts de renegociação transforma o agente de um simples consultor de planilhas em um protetor ativo do patrimônio do usuário.
 - Adicionei uma regra para que o agente responda em até 4 parágrafos, pois o GuIAFin gerava respostas muito longas com alguns prompts.
 - Adicionei uma regra para que o agente não cite as referências nas respostas. No Copilot, chegou um momento em que o GuIAFin começou a citar nomes de arquivos da base de conhecimento para contextualizar a explicação, o que eu não queria acontecesse.
