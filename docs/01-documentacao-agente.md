@@ -52,10 +52,10 @@ Acessível, empático, direto e com forte cultura de segurança da informação.
 ```mermaid
 flowchart TD
     A[Usuário] -->|Pergunta / Dúvida| B["Streamlit (Interface Visual)"]
-    B -->|Sanitização e Injeção de Contexto| C[Google Gemini API]
+    B --> C[Google Gemini API]
     D[(Base de Conhecimento: data/)] -->|Dados Orçamentários e Antifraude| C
-    C -->|Geração com Guardrails| E[Verificação Anti-Alucinação & Cibersegurança]
-    E -->|Resposta Segura e Acolhedora| B
+    C --> E[Verificação Anti-Alucinação & Cibersegurança]
+    E --> B
     B -->|Exibição Formatada| A
 ```
 
