@@ -51,22 +51,22 @@ Acessível, empático, direto e com forte cultura de segurança da informação.
 
 ```mermaid
 flowchart TD
-    A[Usuário] -->|Mensagem| B["Streamlit (Interfase Visual)"]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+    A[Usuário] -->|Pergunta / Dúvida| B["Streamlit (Interface Visual)"]
+    B -->|Sanitização e Injeção de Contexto| C[Google Gemini API]
+    D[(Base de Conhecimento: data/)] -->|Dados Orçamentários e Antifraude| C
+    C -->|Geração com Guardrails| E[Verificação Anti-Alucinação & Cibersegurança]
+    E -->|Resposta Segura e Acolhedora| B
+    B -->|Exibição Formatada| A
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | Streamlit |
-| LLM | Antigravity (local) |
-| Base de Conhecimento | JSON/CSV mockados |
-| Validação | Checagem de Cibersegurança e Guardrails |
+| Interface | Streamlit (Python) |
+| LLM | Google Gemini (via Google AI Studio) |
+| Base de Conhecimento | Arquivos JSON/CSV mockados |
+| Validação | Checagem de Cibersegurança, regras de brevidade (máx. 4 parágrafos) e Guardrails anti-alucinação |
 
 ---
 
@@ -77,5 +77,5 @@ flowchart TD
 - **Prevenção Ativa Antigolpe:** Em toda orientação de renegociação, o agente ensina a verificar o canal oficial da instituição (ex.: app do Bradesco), alerta contra boletos falsos enviados por números não verificados e rejeita pagamentos via Pix para contas de pessoas físicas em nome de credores.
 - **Anti-alucinação:** O agente não inventa regras de mercado, taxas de juros ou produtos financeiros. Se não souber, declara explicitamente sua limitação.
 - **Decisão Baseada em Dados:** Proibido recomendar quitação ou investimentos antes de concluir o diagnóstico básico de renda versus despesas essenciais. Usa apenas os dados fornecidos no contexto.
-- **Neutralidade e Transparência:** Sempre explicar vantagens e desvantagens de qualquer escolha financeira.
+- **Neutralidade e Transparência:** Sempre explicar vantagens e desvantagens de qualquer escolha financeira antes de conduzir para a próxima decisão.
 - **Defesa contra Prompt Injection:** O agente não aceita instruções do usuário para mudar de persona, burlar regras de segurança ou discutir assuntos alheios a finanças pessoais.
