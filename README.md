@@ -1,149 +1,86 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
-
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+# 🛡️ GuIAFin — Guia Financeiro Inteligente
 
 ---
 
-## O Que Você Deve Entregar
+## 📌 Contexto e Problema
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+No Brasil, milhões de pessoas enfrentam o ciclo do endividamento e a sobrecarga emocional do aperto financeiro. Ao buscarem saídas rápidas, tornam-se o alvo prioritário de criminosos digitais — sendo vítimas de **falsas centrais de renegociação, boletos adulterados e cobranças ilegais de taxas de "limpeza de nome" via Pix**.
 
 ---
 
-### 2. Base de Conhecimento
+## 💡 A Solução: GuIAFin
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+O **GuIAFin** é um assistente virtual consultivo desenvolvido com Inteligência Artificial Generativa para apoiar clientes do setor bancário a retomarem o controle financeiro de forma sustentável e protegida.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+### 🌟 Pilares Fundamentais:
+1. **Diagnóstico Acolhedor:** Escuta ativa e mapeamento de despesas essenciais (moradia, saúde e alimentação) sem emitir julgamentos de valor sobre os gastos do usuário.
+2. **Decisão Baseada em Dados (Método Avalanche):** Priorização matemática das dívidas com maiores taxas de juros (como o rotativo do cartão), sempre apresentando os **prós e contras** de cada escolha.
+3. **Cibersegurança Ativa (Zero Trust & LGPD):**
+   - **Zero Trust:** Nunca solicita nem armazena senhas, tokens ou números de cartão.
+   - **Detecção Antifraude em Tempo Real:** Alerta proativamente sobre padrões de golpes ao identificar abordagens suspeitas de renegociação.
+   - **Respostas Diretas e Objetivas:** Limitação estrita a no máximo 4 parágrafos para não sobrecarregar quem já se encontra em situação de estresse.
 
 ---
 
-### 3. Prompts do Agente
+## 🏗️ Arquitetura
 
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
+```mermaid
+flowchart TD
+    A[Usuário] -->|Pergunta / Dúvida| B["Streamlit (Interface Visual)"]
+    B --> C[Google Gemini API]
+    D[(Base de Conhecimento: data/)] -->|Dados Orçamentários e Antifraude| C
+    C --> E[Verificação Anti-Alucinação e Cibersegurança]
+    E --> B
+    B -->|Exibição Formatada| A
 ```
-📁 lab-agente-financeiro/
-│
+## 📁 Estrutura do Repositório
+```
+dio-lab-bia-do-futuro/
 ├── 📄 README.md
+├── 📁 data/                            
+│   ├── transacoes.csv                
+│   ├── dividas_pendentes.csv          
+│   ├── estrategias_renegociacao.json   
+│   └── alertas_fraude_financeira.json  
+├── 📁 docs/
+│   ├── 01-documentacao-agente.md       
+│   ├── 02-base-conhecimento.md         
+│   ├── 03-prompts.md                   
+│   ├── 04-metricas.md                  
+│   └── 05-pitch.md                     
+│── 📁 src/                             
+│   ├── app.py
+│   └── 📄 requirements.txt
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
+├── 📁 assets/
 │   └── ...
 │
-└── 📁 examples/                      # Referências e exemplos
+└── 📁 examples/
     └── README.md
 ```
 
----
+## 🚀 Como Executar o Projeto
 
-## Dicas Finais
+### Pré-requisitos
+- Python 3.10 ou superior instalado;
+- Uma chave de API gratuita do Google Gemini (obtida no Google AI Studio).
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+### Passo a passo
+1. Instale as dependências
+```bash
+pip install -r requirements.txt
+```
+2. Inicie o aplicativo
+```bash
+streamlit run src/app.py
+```
+3. Interaja com o GuIAFin:
+    - O navegador abrirá automaticamente.
+    - Insira sua chave de API na barra lateral esquerda e comece a conversa!
+
+## 📑 Documentação do Projeto
+- 📄 [Documentação do Agente](https://github.com/Vitor-Santos-de-Andrade/dio-lab-bia-do-futuro/blob/main/docs/01-documentacao-agente.md) — Persona, Escopo e Guardrails.
+- 📄 [Base de Conhecimento](https://github.com/Vitor-Santos-de-Andrade/dio-lab-bia-do-futuro/blob/main/docs/02-base-conhecimento.md) — Estratégia de Dados e Engenharia.
+- 📄 [Engenharia de Prompts](https://github.com/Vitor-Santos-de-Andrade/dio-lab-bia-do-futuro/blob/main/docs/03-prompts.md) — System Prompt, Exemplos e Segurança.
+- 📄 [Avaliação e Métricas](https://github.com/Vitor-Santos-de-Andrade/dio-lab-bia-do-futuro/blob/main/docs/04-metricas.md) — Cenários de Teste Reais e Resultados.
+- 📄 [Roteiro do Pitch](https://github.com/Vitor-Santos-de-Andrade/dio-lab-bia-do-futuro/blob/main/docs/05-pitch.md) — Estrutura de Apresentação em 3 Minutos.
